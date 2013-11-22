@@ -13,19 +13,23 @@
 // @updateURL     http://userscripts.org/scripts/source/183860.meta.js
 // @resource      jquery http://code.jquery.com/jquery-latest.min.js
 // @resource      zhd_dewater https://raw.github.com/abbypan/zhd_dewater/master/zhd_dewater.js
+// @resource      bbs_dewater https://raw.github.com/abbypan/zhd_dewater/master/bbs_dewater.js
 // ==/UserScript==
 //
 // --------------------------------------------------------------------
-function add_js_file(js) {
-    var text = GM_getResourceText(js);
 
+function add_js_content(text){
     var add = document.createElement('script');
     add.setAttribute('type', "text/javascript");
     add.appendChild(document.createTextNode(text));
 
     var ins =  document.getElementsByTagName('head')[0] || document.documentElement;
     ins.appendChild(add);
-    //document.getElementsByTagName('body')[0].appendChild(add);
+}
+
+function add_js_file(js) {
+    var text = GM_getResourceText(js);
+    add_js_content(text);
 }
 
 // Add jQuery
@@ -42,6 +46,9 @@ function GM_wait() {
         window.setTimeout(GM_wait, 100);
     } else {
         //$ = unsafeWindow.jQuery.noConflict(true);
+        //var text = GM_getResourceText('bbs_dewater') + "\n" + GM_getResourceText('zhd_dewater');
         add_js_file('zhd_dewater');
+        add_js_file('bbs_dewater');
+        //add_js_content(text);
     }
 }
