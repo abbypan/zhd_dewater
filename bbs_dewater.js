@@ -89,6 +89,8 @@ $(xp).before($main_floors);
     function get_page_urls() {
         var num = get_page_num();
 
+        $('#dewater_title').html("共 " + num + " 页");
+
         var url = get_topic_url();
 
         url = format_thread_url_1st(url);
@@ -96,7 +98,7 @@ $(xp).before($main_floors);
         if (!num) return [url];
 
         var url_list = new Array();
-        for (var i = 1; i < num; i++) {
+        for (var i = 1; i <= num; i++) {
             var n_url = format_thread_url_ith(url, i);
             url_list.push(n_url);
         }
