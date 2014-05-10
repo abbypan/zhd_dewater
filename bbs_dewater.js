@@ -64,13 +64,24 @@ $(xp).before($main_floors);
                 $resp.find(fp).each(function() {
                     var bot = $(this);
                     var f_i = extract_floor_info(bot);
-                    floors_info.push(f_i);
+
+                    if(is_push_floor(floors_info, f_i)){
+                        floors_info.push(f_i);
+                    }
                 });
 
             }
         });
 
         return floors_info;
+    }
+    
+    function is_push_floor(floors_info, f_i){
+        var len = floors_info.length;
+        if(len<=0) return true; 
+        var last = floors_info[len-1].id;
+        var i = f_i.id;
+        return ( i > last ) ? true : false;
     }
 
     function get_topic_url() {
