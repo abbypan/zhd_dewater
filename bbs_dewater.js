@@ -174,11 +174,18 @@ $(xp).before($main_floors);
             'line-height': '145%' 
         });
 
-        $('#dewater_title,.chapter,#dewater_toc').css({
-            'border-bottom': '0.2em solid #ee9b73',
+        $('.chapter,#dewater_title,#dewater_toc').css({
             'margin': '0.8em 0.2em 2.8em 0.2em',
             'text-indent': '0em',
             'padding-bottom': '0.25em'
+        });
+
+        $('.chapter').css({
+            'border-top': '0.2em solid #ee9b73',
+        });
+
+        $('#dewater_title,#dewater_toc').css({
+            'border-bottom': '0.2em solid #ee9b73',
         });
 
         $('#dewater_title').css({
@@ -186,14 +193,9 @@ $(xp).before($main_floors);
             'font-size': 'x-large',
         });
 
-        $('.flcontent,#dewater_toc').css({
-            'line-height': '125%'
-        });
-
         $('.star').css({
             'color': '#99cc00',
         });
-
     }
 
     function get_topic_poster(main_floors){
