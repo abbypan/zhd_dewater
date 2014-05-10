@@ -150,13 +150,16 @@ $(xp).before($main_floors);
     }
 
     function add_floor_toc(dst, f) {
-        var html = '<p>' + f.id + '# <a href="#toc' + f.id + '">' + f.time + ' ' + f.poster + '</a></p>';
+        var html = '<p>' + f.id + '# <a href="#floor' + f.id + '">' + f.time + ' ' + f.poster + '</a></p>';
         $floor = $(html);
         $(dst).append($floor);
     }
 
     function add_floor_content(dst, f) {
-        var html = '<div class="floor" id="floor' + f.id + '">' + '<div class="flcontent">' + f.content + '</div>' + '<div class="fltitle"><a name="toc' + f.id + '">№' + f.id + '<span class="star">☆☆☆</span>' + f.poster + '<span class="star">于☆☆☆</span>' + f.time + '<span class="star">留言☆☆☆</span></a></div>' + '</div>';
+        var html = '<div class="floor" id="floor' + f.id + '">' + 
+            '<div class="chapter">№' + f.id + '<span class="star">☆☆☆</span>' + f.poster + '<span class="star">于☆☆☆</span>' + f.time + '<span class="star">留言☆☆☆</span></div>' + 
+            '<div class="flcontent">' + f.content + '</div>' + 
+            '</div>';
         $floor = $(html);
         $(dst).append($floor);
     }
@@ -170,7 +173,7 @@ $(xp).before($main_floors);
             'text-indent': '2em',
         });
 
-        $('#dewater_title,.fltitle,#dewater_toc').css({
+        $('#dewater_title,.chapter,#dewater_toc').css({
             'border-bottom': '0.1em solid #99cc00',
             'margin': '0.8em 0.2em 2.8em 0.2em',
             'text-indent': '0em',
