@@ -79,8 +79,8 @@ $(xp).before($main_floors);
     function is_push_floor(floors_info, f_i){
         var len = floors_info.length;
         if(len<=0) return true; 
-        var last = floors_info[len-1].id;
-        var i = f_i.id;
+        var last = parseInt(floors_info[len-1].id);
+        var i = parseInt(f_i.id);
         return ( i > last ) ? true : false;
     }
 
