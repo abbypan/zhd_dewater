@@ -1,4 +1,6 @@
-if(!window.jQuery) {
+var jq = jQuery || window.jQuery || $;
+
+if(! jq) {
         var script = document.createElement('script');
         script.type = "text/javascript";
         script.src = "http://code.jquery.com/jquery-latest.min.js";
@@ -64,10 +66,7 @@ $(xp).before($main_floors);
                 $resp.find(fp).each(function() {
                     var bot = $(this);
                     var f_i = extract_floor_info(bot);
-
-                    if(is_push_floor(floors_info, f_i)){
-                        floors_info.push(f_i);
-                    }
+                    floors_info.push(f_i);
                 });
 
             }
@@ -76,13 +75,6 @@ $(xp).before($main_floors);
         return floors_info;
     }
     
-    function is_push_floor(floors_info, f_i){
-        var len = floors_info.length;
-        if(len<=0) return true; 
-        var last = parseInt(floors_info[len-1].id);
-        var i = parseInt(f_i.id);
-        return ( i > last ) ? true : false;
-    }
 
     function get_topic_url() {
         return window.location.href;
@@ -147,11 +139,20 @@ $(xp).before($main_floors);
             var flen = f.length;
             for (var j = 0; j < flen; j++) {
                 var id = f[j].id;
+                if (is_push_floor(main_floors, id)==false) continue;
                 if (is_floor_overflow(id, option)) return main_floors;
                 main_floors.push(f[j]);
             }
         }
         return main_floors;
+    }
+
+    function is_push_floor(floors_info, id){
+        var len = floors_info.length;
+        if(len<=0) return true;
+        var last_id = parseInt(floors_info[len-1].id);
+        if(id > last_id) return true;
+        return false;
     }
 
     function is_skip_floor(f, opt) {
