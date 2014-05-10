@@ -171,21 +171,22 @@ $(xp).before($main_floors);
             'font-family': 'Verdana, Arial, Helvetica, sans-serif',
             'margin': '1em 8em 1em 8em',
             'text-indent': '2em',
+            'line-height': '145%' 
         });
 
         $('#dewater_title,.chapter,#dewater_toc').css({
-            'border-bottom': '0.1em solid #99cc00',
+            'border-bottom': '0.2em solid #ee9b73',
             'margin': '0.8em 0.2em 2.8em 0.2em',
             'text-indent': '0em',
-            'padding-bottom': '0.25em',
+            'padding-bottom': '0.25em'
         });
 
         $('#dewater_title').css({
             'text-align': 'center',
-            'font-size': 'large',
+            'font-size': 'x-large',
         });
 
-        $('.flcontent').css({
+        $('.flcontent,#dewater_toc').css({
             'line-height': '125%'
         });
 
