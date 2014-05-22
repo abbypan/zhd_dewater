@@ -28,8 +28,6 @@ function get_topic_name() {
 function get_page_num() {
     var num = $('div.pages').html();
     var num_m = num.match(/var page=\(value>(\d+)\) \?/);
-    //var num = $('div.pages input').text();
-    //var num_m = num.match(/\.\.\.(\d+)下一页/);
     if(!num_m) return;
     return num_m[1];
 }

@@ -40,7 +40,6 @@ function GM_wait() {
     }
 }
 
-// Add jQuery
 (function(){
     if (typeof unsafeWindow.jQuery == 'undefined') {
         add_js_file('jquery');
