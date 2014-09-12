@@ -9,9 +9,7 @@
 // @copyright     2013, Abby Pan (http://abbypan.github.com/) 
 // @grant         GM_getResourceText
 // @include       http://www.zonghengdao.net/read.php*
-// @downloadURL   http://userscripts.org/scripts/source/183860.user.js
-// @updateURL     http://userscripts.org/scripts/source/183860.meta.js
-// @resource      jquery http://code.jquery.com/jquery-latest.min.js
+// @resource      jquery  http://libs.baidu.com/jquery/2.0.0/jquery.min.js
 // @resource      zhd_dewater https://raw.github.com/abbypan/zhd_dewater/master/zhd_dewater.js
 // @resource      bbs_dewater https://raw.github.com/abbypan/bbs_dewater/master/bbs_dewater.js
 // ==/UserScript==
