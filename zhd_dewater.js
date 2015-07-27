@@ -9,7 +9,7 @@ function extract_floor_info(info) {
     re["id"] = info.find('a.s1.b.cp').text().replace(/\[(\d+)\D.*/,'$1');
     re["content"] = info.find('div.f14.mb10').html().
     replace(/<\/?font[^>]*>/g, '');
-    re["word_num"] = re["content"].replace('<[^>]+>','').length;
+    //re["word_num"] = re["content"].replace('<[^>]+>','').length;
     return re;
 }
 
