@@ -3,8 +3,6 @@ zhd_dewater
 
 [纵横道](http://www.zonghengdao.net) 贴子脱水
 
-安装：[zhd-dewater](https://greasyfork.org/zh-CN/scripts/4077-zhd-dewater)
-
 以 clare [【叶昭】 嘉佑年间凋零故事](http://www.zonghengdao.net/read.php?tid=20984) 为例
 
 贴子内添加脱水按钮
